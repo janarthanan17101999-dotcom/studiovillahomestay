@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Villa Homestay - Pondicherry</title>
+  <meta name="description" content="Studio Villa Homestay - Pondicherry | 2BHK (A1 & B1) | Pet Friendly | Near Beach & White Town | WhatsApp Booking" />
+
+  <style>
+    :root{
+      --bg:#070A12;
+      --card:#0E1326;
+      --text:#EAF0FF;
+      --muted:#B8C3E6;
+      --accent:#FFCC00;
+      --accent2:#00E5FF;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(0,229,255,.18), transparent 60%),
+                  radial-gradient(900px 500px at 100% 10%, rgba(255,204,0,.18), transparent 55%),
+                  linear-gradient(180deg, #05060B, #070A12 55%, #060812);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1150px;margin:0 auto;padding:0 18px}
+
+    /* TOPBAR */
+    .topbar{
+      position:sticky; top:0; z-index:999;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.65);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0;
+      gap:14px;
+    }
+    .brand{display:flex; flex-direction:column; line-height:1.1;}
+    .brand strong{font-size:15px; letter-spacing:.4px;}
+    .brand span{font-size:12px; color:var(--muted);}
+
+    .nav-actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+
+    .btn{
+      padding:10px 14px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.06);
+      transition:.25s;
+      display:inline-flex; align-items:center; gap:8px;
+      font-weight:700; font-size:13px;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-1px); border-color:rgba(255,255,255,.25)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(255,204,0,.95), rgba(0,229,255,.85));
+      color:#071018;
+      border:none;
+    }
+    .btn.whatsapp{
+      background: linear-gradient(135deg, rgba(37,211,102,.95), rgba(0,229,255,.35));
+      border:none;
+      color:#06110A;
+    }
+
+    /* Instagram premium button */
+    .btn.insta{
+      border:none;
+      color:#fff;
+      background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      box-shadow: 0 14px 45px rgba(214,36,159,.25);
+    }
+    .btn.insta:hover{
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+    .insta-ico{
+      width:18px;
+      height:18px;
+      display:inline-block;
+      background: rgba(255,255,255,.95);
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4a6 6 0 1 1 0 12a6 6 0 0 1 0-12Zm0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8Zm6.5-.9a1.1 1.1 0 1 1-2.2 0a1.1 1.1 0 0 1 2.2 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 4a6 6 0 1 1 0 12a6 6 0 0 1 0-12Zm0 2a4 4 0 1 0 0 8a4 4 0 0 0 0-8Zm6.5-.9a1.1 1.1 0 1 1-2.2 0a1.1 1.1 0 0 1 2.2 0Z'/%3E%3C/svg%3E") center / contain no-repeat;
+    }
+
+    /* HERO */
+    .hero{padding:52px 0 30px; position:relative;}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow: var(--shadow);
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+      animation: homeScaleIn 0.9s ease-out forwards;
+      transform-origin: center;
+    }
+    @keyframes homeScaleIn {
+      0% { transform: scale(0.92) translateY(10px); opacity: 0; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    .tag{
+      display:inline-flex;
+      gap:10px;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.25);
+      font-size:12px;
+      color:var(--muted);
+      flex-wrap:wrap;
+    }
+    .hero h1{
+      margin:14px 0 10px;
+      font-size:40px;
+      line-height:1.05;
+      letter-spacing:.5px;
+      text-transform:uppercase;
+    }
+    .glow{
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero p{
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.55;
+    }
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin:14px 0 18px;}
+    .chip{
+      padding:9px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      font-size:13px;
+      color:#DDE6FF;
+    }
+    .hero-actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;}
+
+    .side-card{
+      background: linear-gradient(180deg, rgba(14,19,38,.85), rgba(14,19,38,.55));
+      border:1px solid var(--border);
+      border-radius:24px;
+      box-shadow: var(--shadow);
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .mini-title{
+      font-weight:800;
+      letter-spacing:.4px;
+      text-transform:uppercase;
+      font-size:13px;
+      color:#EAF0FF;
+    }
+    .info{color:var(--muted); font-size:13px; line-height:1.45;}
+    .divider{height:1px; background:rgba(255,255,255,.10); margin:4px 0;}
+    .link-btn{width:100%; justify-content:center;}
+
+    .notice{
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .pill{
+      padding:10px 12px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.22);
+      font-size:13px;
+      color:#DDE6FF;
+    }
+    .pill strong{color:#fff}
+
+    section{padding:24px 0}
+    .section-title{font-size:20px; margin:0 0 12px; letter-spacing:.3px;}
+    .section-sub{margin:0 0 18px; color:var(--muted); font-size:14px; line-height:1.5;}
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    .card{
+      background: rgba(255,255,255,.05);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:16px;
+      min-height:92px;
+    }
+    .card strong{display:block;margin-bottom:6px}
+    .card span{color:var(--muted);font-size:13px}
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+    }
+    .list b{color:var(--text)}
+
+    /* SLIDER */
+    .slider{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+    .slides{
+      display:flex;
+      transition: transform .45s ease;
+      width:100%;
+    }
+    .slide{
+      min-width:100%;
+      position:relative;
+    }
+    .slide img{
+      width:100%;
+      height:420px;
+      object-fit:cover;
+      display:block;
+      cursor:pointer;
+      transition: transform .45s ease, filter .45s ease;
+      filter: contrast(1.05) saturate(1.08);
+    }
+    .slide img:hover{transform: scale(1.03);}
+
+    .caption{
+      position:absolute;
+      left:14px;
+      bottom:14px;
+      padding:8px 12px;
+      border-radius:14px;
+      font-size:13px;
+      font-weight:800;
+      background: rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .counter{
+      position:absolute;
+      right:14px;
+      top:14px;
+      padding:8px 12px;
+      border-radius:14px;
+      font-size:13px;
+      font-weight:800;
+      background: rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .slider-controls{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      padding:12px;
+      background: rgba(0,0,0,.35);
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+
+    .thumbs{
+      display:flex;
+      gap:10px;
+      overflow-x:auto;
+      padding-bottom:4px;
+      scroll-snap-type:x mandatory;
+    }
+    .thumbs::-webkit-scrollbar{height:6px}
+    .thumbs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.18);border-radius:999px}
+
+    .thumb{
+      width:78px;
+      height:52px;
+      flex:0 0 auto;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      opacity:.65;
+      cursor:pointer;
+      transition:.2s;
+      scroll-snap-align:start;
+    }
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .thumb.active{
+      opacity:1;
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.35);
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+    }
+
+    .control-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+    }
+    .slider-btn{
+      border:none;
+      padding:10px 14px;
+      border-radius:14px;
+      font-weight:900;
+      cursor:pointer;
+      background: rgba(255,255,255,.12);
+      color:#fff;
+    }
+
+    /* CONTACT */
+    .contact-box{
+      background: rgba(255,255,255,.05);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    .contact-item{
+      background: rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      padding:14px;
+    }
+    .contact-item b{display:block;margin-bottom:6px}
+    .contact-item small{color:var(--muted)}
+    .map{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      height:280px;
+    }
+
+    footer{
+      padding:18px 0 28px;
+      color:rgba(234,240,255,.65);
+      font-size:12px;
+      border-top:1px solid rgba(255,255,255,.10);
+      margin-top:18px;
+    }
+
+    /* FULLSCREEN IMAGE POPUP */
+    .img-popup{
+      position:fixed;
+      inset:0;
+      background: rgba(0,0,0,.9);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:999999;
+    }
+    .img-popup img{
+      max-width:92%;
+      max-height:92%;
+      border-radius:16px;
+    }
+    .img-popup .close{
+      position:absolute;
+      top:18px;
+      right:18px;
+      font-size:26px;
+      color:#fff;
+      cursor:pointer;
+      background:rgba(255,255,255,.15);
+      padding:6px 12px;
+      border-radius:10px;
+    }
+
+    /* Floating Call/WhatsApp */
+    .floating{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      z-index:9999;
+    }
+    .fab{
+      border:none;
+      padding:12px 14px;
+      border-radius:16px;
+      font-weight:900;
+      cursor:pointer;
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: var(--text);
+      backdrop-filter: blur(10px);
+    }
+    .fab.whatsapp{
+      background: linear-gradient(135deg, rgba(37,211,102,.95), rgba(0,229,255,.35));
+      color:#06110A;
+      border:none;
+    }
+    .fab.call{
+      background: linear-gradient(135deg, rgba(255,204,0,.95), rgba(0,229,255,.25));
+      color:#071018;
+      border:none;
+    }
+
+    .property-switch{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:12px 0 14px;
+    }
+    .prop-btn{
+      flex:1;
+      min-width:240px;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      cursor:pointer;
+      font-weight:900;
+      transition:.25s;
+    }
+    .prop-btn:hover{transform: translateY(-1px); border-color:rgba(255,255,255,.25)}
+    .prop-btn.active{
+      background: linear-gradient(135deg, rgba(255,204,0,.95), rgba(0,229,255,.85));
+      color:#071018;
+      border:none;
+    }
+    .pet-badge{
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      color:#071018;
+      background: linear-gradient(135deg, rgba(255,204,0,.95), rgba(0,229,255,.85));
+    }
+    .loc-badge{
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      color:#EAF0FF;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.25);
+    }
+    .pet-highlight{
+      margin:10px 0 12px;
+      padding:16px 16px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.14);
+      background:
+        radial-gradient(600px 240px at 10% 10%, rgba(37,211,102,.22), transparent 55%),
+        radial-gradient(600px 240px at 90% 0%, rgba(255,204,0,.18), transparent 55%),
+        rgba(0,0,0,.22);
+    }
+    .pet-title{font-weight:900; letter-spacing:.3px; font-size:16px;}
+    .pet-sub{margin-top:6px;color: rgba(234,240,255,.75);font-size:13px;}
+    .combo-offer{
+      margin:10px 0 16px;
+      padding:12px 14px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: rgba(234,240,255,.9);
+      font-size:13px;
+    }
+
+    @media (max-width: 860px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+      .cards{grid-template-columns:1fr}
+      .two-col{grid-template-columns:1fr}
+      .contact-box{grid-template-columns:1fr}
+      .slide img{height:260px;}
+      .thumb{width:64px;height:44px;}
+      .nav-actions{gap:8px}
+      .btn{padding:9px 12px;border-radius:13px;font-size:12.5px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="brand">
+          <strong>Studio Villa Homestay - Pondicherry</strong>
+          <span>Pet Friendly 🐾 | 2BHK (A1 & B1) | AC | Fully Furnished</span>
+        </div>
+
+        <div class="nav-actions">
+          <a class="btn" href="#gallery">📸 Gallery</a>
+          <a class="btn" href="#amenities">✨ Amenities</a>
+          <a class="btn" href="#location">📍 Location</a>
+          <a class="btn primary" href="#book">⭐ Book Now</a>
+
+          <a class="btn insta" target="_blank"
+             href="https://www.instagram.com/studio_villa_homestay_pondy?igsh=NHo4ZjBkYjBkOGcw&utm_source=qr">
+            <span class="insta-ico"></span> Instagram
+          </a>
+
+          <a class="btn whatsapp" target="_blank"
+             href="https://wa.me/919363739168?text=Hi%20Studio%20Villa%20Homestay%20%F0%9F%91%8B%0AI%20want%20to%20book%20a%20stay.%0A%0AProperty%3A%20B1%20%2F%20A1%20%2F%20Both%0ACheck-in%3A%20____%0ACheck-out%3A%20____%0AGuests%3A%20____%0APets%3A%20Yes%2FNo">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div class="hero-card">
+          <div class="tag">
+            🌴 Pondicherry Stay • 🏡 Private 2BHK Homestay • 💰 Starting from <b>₹5999 / night</b>
+            <span class="pet-badge">🐾 100% PET FRIENDLY</span>
+            <span class="loc-badge">📍 Vaithikuppam (Near Beach & White Town)</span>
+          </div>
+
+          <h1>
+            <span class="glow">Studio Villa</span><br/>
+            Homestay
+          </h1>
+
+          <p>
+            Experience a peaceful and comfortable stay in Pondicherry.
+            <b>2BHK • 2 Bedrooms + Hall + Kitchen • Fully Furnished</b>
+          </p>
+
+          <div class="notice">
+            <div class="pill">🕑 <strong>Check-in:</strong> 2:00 PM</div>
+            <div class="pill">🕛 <strong>Check-out:</strong> 12:00 PM</div>
+            <div class="pill">🎁 <strong>Offer:</strong> Book Both A1 + B1 @ <b>₹12,500</b> (Discount)</div>
+            <div class="pill">💰 <strong>Direct Booking:</strong> Best price on WhatsApp</div>
+          </div>
+
+          <div class="chips">
+            <div class="chip">🧼 Clean rooms • Fresh linen • Sanitized bathrooms</div>
+            <div class="chip">🗝️ Easy Check-in</div>
+            <div class="chip">📍 Prime Location</div>
+            <div class="chip">🤝 Friendly Host</div>
+            <div class="chip">👨‍👩‍👧‍👦 Family Stay</div>
+            <div class="chip">🐶 Pets Allowed</div>
+          </div>
+
+          <div class="hero-actions" id="book">
+            <a class="btn primary" target="_blank"
+               href="https://wa.me/919363739168?text=Hi%20Studio%20Villa%20Homestay%20%F0%9F%91%8B%0AI%20want%20to%20book%20a%20stay.%0A%0AProperty%3A%20B1%20%2F%20A1%20%2F%20Both%0ACheck-in%3A%20____%0ACheck-out%3A%20____%0AGuests%3A%20____%0APets%3A%20Yes%2FNo">
+              ⭐ WhatsApp Booking
+            </a>
+
+            <a class="btn" href="tel:+919363739168">📞 Call Now</a>
+
+            <a class="btn" target="_blank"
+               href="https://airbnb.co.in/rooms/1596375047598249050?viralityEntryPoint=1&s=76">
+              🏡 Airbnb
+            </a>
+          </div>
+
+          <div style="margin-top:12px;color:rgba(234,240,255,.75);font-size:13px;line-height:1.45">
+            ✅ Free cancellation up to <b>24 hours</b> before check-in.
+          </div>
+        </div>
+
+        <div class="side-card">
+          <div>
+            <div class="mini-title">Contact</div>
+            <div class="info">
+              📞 <b>9363739168</b><br/>
+              ✉️ studiovillahomestay@gmail.com
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div>
+            <div class="mini-title">Host</div>
+            <div class="info">
+              🤝 <b>MUGUNTHAN</b> (Friendly Host)
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div>
+            <div class="mini-title">Address</div>
+            <div class="info">
+              51, Pappammal Koil St,<br/>
+              Vaithikuppam, Puducherry - 605001
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <a class="btn whatsapp link-btn" target="_blank"
+             href="https://wa.me/919363739168?text=Hi%20Studio%20Villa%20Homestay%20%F0%9F%91%8B%0AI%20want%20to%20book%20a%20stay.%0A%0AProperty%3A%20B1%20%2F%20A1%20%2F%20Both%0ACheck-in%3A%20____%0ACheck-out%3A%20____%0AGuests%3A%20____%0APets%3A%20Yes%2FNo">
+            💬 Message on WhatsApp
+          </a>
+
+          <a class="btn link-btn" href="#location">📍 Open Location</a>
+          <a class="btn link-btn" href="#contact">📩 Contact Details</a>
+
+          <a class="btn insta link-btn" target="_blank"
+             href="https://www.instagram.com/studio_villa_homestay_pondy?igsh=NHo4ZjBkYjBkOGcw&utm_source=qr">
+            <span class="insta-ico"></span> Follow on Instagram
+          </a>
+
+          <div style="font-size:12px;color:rgba(234,240,255,.6);line-height:1.4">
+            ⭐ Best for weekend trips, family vacation & peaceful stay.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <section id="amenities">
+    <div class="container">
+      <h2 class="section-title">Amenities & House Rules</h2>
+      <p class="section-sub">Everything you need for a comfortable stay.</p>
+
+      <div class="two-col">
+        <div class="card">
+          <strong>✨ Amenities</strong>
+          <ul class="list">
+            <li>✅ <b>AC</b></li>
+            <li>✅ <b>WiFi</b></li>
+            <li>✅ <b>TV</b></li>
+            <li>✅ <b>Hot Water</b></li>
+            <li>✅ <b>Kitchen / Utensils</b></li>
+            <li>✅ <b>Parking</b></li>
+            <li>✅ <b>Pet Friendly 🐾</b></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <strong>📌 House Rules</strong>
+          <ul class="list">
+            <li>🪪 <b>ID proof required</b></li>
+            <li>🐾 <b>Pets allowed</b> (inform before)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nearby">
+    <div class="container">
+      <h2 class="section-title">Nearby Places</h2>
+      <p class="section-sub">Prime location – easy access to popular spots.</p>
+
+      <div class="cards">
+        <div class="card"><strong>🏖️ Rock Beach</strong><span>~1 km</span></div>
+        <div class="card"><strong>🏛️ White Town</strong><span>~1 km</span></div>
+        <div class="card"><strong>🌊 Promenade</strong><span>~1.2 km</span></div>
+        <div class="card"><strong>🕉️ Aurobindo Ashram</strong><span>~1.5 km</span></div>
+        <div class="card"><strong>🏝️ Paradise Beach</strong><span>~8 km</span></div>
+        <div class="card"><strong>🙏 Sri Manakula Vinayagar Temple</strong><span>~1.4 km</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2 class="section-title">Properties & Gallery</h2>
+      <p class="section-sub">Choose your property and view photos separately.</p>
+
+      <div class="property-switch">
+        <button class="prop-btn active" data-target="b1Wrap">🏡 B1 (₹6999 / Night) • 6 Adults + 2 Children</button>
+        <button class="prop-btn" data-target="a1Wrap">🏡 A1 (₹5999 / Night) • 6 Adults + 1 Child</button>
+      </div>
+
+      <div class="pet-highlight">
+        <div class="pet-title">🐾 100% Pet Friendly Stay</div>
+        <div class="pet-sub">Pets are welcome ❤️ (Inform us before check-in)</div>
+      </div>
+
+      <div class="combo-offer">
+        🎁 <b>Discount Offer:</b> Book both A1 + B1 together @ <b>₹12,500 / night</b>
+      </div>
+
+      <!-- B1 -->
+      <div class="gallery-wrap" id="b1Wrap">
+        <h3 class="section-title" style="margin-top:14px">Studio Villa Homestay – B1</h3>
+        <p class="section-sub">Swipe or click photos to view in full screen.</p>
+
+        <div class="slider" id="sliderB1">
+          <div class="slides" id="slidesB1">
+            <div class="slide"><img src="b1-1.jpg" alt="B1 - Outside View" onclick="openImg(this.src)"><div class="caption">🏡 B1 Outside View</div></div>
+            <div class="slide"><img src="b1-2.jpg" alt="B1 - Hall" onclick="openImg(this.src)"><div class="caption">🛋️ B1 Living Hall</div></div>
+            <div class="slide"><img src="b1-3.jpg" alt="B1 - Bedroom" onclick="openImg(this.src)"><div class="caption">🛏️ B1 Bedroom</div></div>
+            <div class="slide"><img src="b1-4.jpg" alt="B1 - Bedroom 2" onclick="openImg(this.src)"><div class="caption">🛏️ B1 Bedroom 2</div></div>
+            <div class="slide"><img src="b1-5.jpg" alt="B1 - Kitchen" onclick="openImg(this.src)"><div class="caption">🍳 B1 Kitchen</div></div>
+            <div class="slide"><img src="b1-6.jpg" alt="B1 - Bathroom" onclick="openImg(this.src)"><div class="caption">🚿 B1 Bathroom</div></div>
+            <div class="slide"><img src="b1-7.jpg" alt="B1 - Hall 2" onclick="openImg(this.src)"><div class="caption">✨ B1 Hall View</div></div>
+            <div class="slide"><img src="b1-8.jpg" alt="B1 - Dining" onclick="openImg(this.src)"><div class="caption">🍽️ B1 Dining Area</div></div>
+            <div class="slide"><img src="b1-9.jpg" alt="B1 - Bedroom 3" onclick="openImg(this.src)"><div class="caption">🌙 B1 Bedroom View</div></div>
+            <div class="slide"><img src="b1-10.jpg" alt="B1 - TV Area" onclick="openImg(this.src)"><div class="caption">📺 B1 TV Area</div></div>
+          </div>
+
+          <div class="counter" id="counterB1">1 / 10</div>
+
+          <div class="slider-controls">
+            <div class="thumbs" id="thumbsB1"></div>
+            <div class="control-row">
+              <button class="slider-btn" id="prevBtnB1">⬅</button>
+              <button class="slider-btn" id="nextBtnB1">➡</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A1 -->
+      <div class="gallery-wrap" id="a1Wrap" style="display:none">
+        <h3 class="section-title" style="margin-top:14px">Studio Villa Homestay – A1</h3>
+        <p class="section-sub">Swipe or click photos to view in full screen.</p>
+
+        <div class="slider" id="sliderA1">
+          <div class="slides" id="slidesA1">
+            <div class="slide"><img src="a1-1.jpg" alt="A1 - Outside View" onclick="openImg(this.src)"><div class="caption">🏡 A1 Outside View</div></div>
+            <div class="slide"><img src="a1-2.jpg" alt="A1 - Hall" onclick="openImg(this.src)"><div class="caption">🛋️ A1 Living Hall</div></div>
+            <div class="slide"><img src="a1-3.jpg" alt="A1 - Bedroom" onclick="openImg(this.src)"><div class="caption">🛏️ A1 Bedroom</div></div>
+            <div class="slide"><img src="a1-4.jpg" alt="A1 - Bedroom 2" onclick="openImg(this.src)"><div class="caption">🌙 A1 Bedroom View</div></div>
+            <div class="slide"><img src="a1-5.jpg" alt="A1 - TV Area" onclick="openImg(this.src)"><div class="caption">📺 A1 TV Area</div></div>
+            <div class="slide"><img src="a1-6.jpg" alt="A1 - Kitchen" onclick="openImg(this.src)"><div class="caption">🍳 A1 Kitchen</div></div>
+            <div class="slide"><img src="a1-7.jpg" alt="A1 - Bathroom" onclick="openImg(this.src)"><div class="caption">🚿 A1 Bathroom</div></div>
+            <div class="slide"><img src="a1-8.jpg" alt="A1 - Dining" onclick="openImg(this.src)"><div class="caption">🍽️ A1 Dining Area</div></div>
+            <div class="slide"><img src="a1-9.jpg" alt="A1 - Bedroom 3" onclick="openImg(this.src)"><div class="caption">✨ A1 Room View</div></div>
+            <div class="slide"><img src="a1-10.jpg" alt="A1 - Hall 2" onclick="openImg(this.src)"><div class="caption">🛋️ A1 Hall View</div></div>
+          </div>
+
+          <div class="counter" id="counterA1">1 / 10</div>
+
+          <div class="slider-controls">
+            <div class="thumbs" id="thumbsA1"></div>
+            <div class="control-row">
+              <button class="slider-btn" id="prevBtnA1">⬅</button>
+              <button class="slider-btn" id="nextBtnA1">➡</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="location">
+    <div class="container">
+      <h2 class="section-title">Location</h2>
+      <p class="section-sub">51, Pappammal Koil St, Vaithikuppam, Puducherry - 605001</p>
+
+      <div class="hero-actions" style="margin-bottom:14px">
+        <a class="btn primary" target="_blank"
+           href="https://www.google.com/maps?q=51,%20Pappammal%20Koil%20St,%20Vaithikuppam,%20Puducherry,%20605001">
+          🧭 Open in Google Maps
+        </a>
+      </div>
+
+      <div class="map">
+        <iframe
+          title="Studio Villa Homestay Location"
+          src="https://www.google.com/maps?q=51,%20Pappammal%20Koil%20St,%20Vaithikuppam,%20Puducherry,%20605001&output=embed"
+          width="100%" height="100%" style="border:0;"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact & Booking</h2>
+      <p class="section-sub">For booking and price details, message us on WhatsApp or call directly.</p>
+
+      <div class="contact-box">
+        <div class="contact-item">
+          <b>📞 Phone / WhatsApp</b>
+          <small>9363739168</small>
+          <div style="margin-top:10px;">
+            <a class="btn whatsapp" target="_blank"
+               href="https://wa.me/919363739168?text=Hi%20Studio%20Villa%20Homestay%20%F0%9F%91%8B%0AI%20want%20to%20book%20a%20stay.%0A%0AProperty%3A%20B1%20%2F%20A1%20%2F%20Both%0ACheck-in%3A%20____%0ACheck-out%3A%20____%0AGuests%3A%20____%0APets%3A%20Yes%2FNo">
+              💬 WhatsApp Now
+            </a>
+            <a class="btn" href="tel:+919363739168" style="margin-left:8px;">📞 Call Now</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <b>✉️ Email</b>
+          <small>studiovillahomestay@gmail.com</small>
+          <div style="margin-top:10px;">
+            <a class="btn" href="mailto:studiovillahomestay@gmail.com">📩 Send Email</a>
+          </div>
+        </div>
+
+        <div class="contact-item" style="grid-column:1/-1;">
+          <b>📍 Address</b>
+          <small>51, Pappammal Koil St, Vaithikuppam, Puducherry - 605001</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Studio Villa Homestay - Pondicherry | All Rights Reserved
+    </div>
+  </footer>
+
+  <div class="img-popup" id="imgPopup">
+    <span class="close" onclick="closeImg()">✕</span>
+    <img id="popupImg" src="">
+  </div>
+
+  <div class="floating">
+    <a class="fab whatsapp" target="_blank"
+       href="https://wa.me/919363739168?text=Hi%20Studio%20Villa%20Homestay%20%F0%9F%91%8B%0AI%20want%20to%20book%20a%20stay.%0A%0AProperty%3A%20B1%20%2F%20A1%20%2F%20Both%0ACheck-in%3A%20____%0ACheck-out%3A%20____%0AGuests%3A%20____%0APets%3A%20Yes%2FNo">
+      💬 WhatsApp
+    </a>
+    <a class="fab call" href="tel:+919363739168">📞 Call</a>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function openImg(src){
+      document.getElementById("popupImg").src = src;
+      document.getElementById("imgPopup").style.display = "flex";
+    }
+    function closeImg(){
+      document.getElementById("imgPopup").style.display = "none";
+    }
+
+    // ====== SLIDER + THUMBNAILS (Reusable) ======
+    function createSlider({slidesId, thumbsId, counterId, prevBtnId, nextBtnId}){
+      const slides = document.getElementById(slidesId);
+      const thumbs = document.getElementById(thumbsId);
+      const counter = document.getElementById(counterId);
+      const prevBtn = document.getElementById(prevBtnId);
+      const nextBtn = document.getElementById(nextBtnId);
+
+      if(!slides || !thumbs || !counter || !prevBtn || !nextBtn) return;
+
+      const imgs = slides.querySelectorAll("img");
+      const total = imgs.length;
+      let index = 0;
+      let timer = null;
+
+      function renderThumbs(){
+        thumbs.innerHTML = "";
+        imgs.forEach((img, i)=>{
+          const t = document.createElement("div");
+          t.className = "thumb" + (i === index ? " active" : "");
+          t.innerHTML = `<img src="${img.getAttribute("src")}" alt="thumb">`;
+          t.onclick = ()=>goTo(i);
+          thumbs.appendChild(t);
+        });
+      }
+
+      function updateThumbActive(){
+        const all = thumbs.querySelectorAll(".thumb");
+        all.forEach((t,i)=>t.classList.toggle("active", i === index));
+      }
+
+      function goTo(i){
+        index = (i + total) % total;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        counter.textContent = `${index + 1} / ${total}`;
+        updateThumbActive();
+      }
+
+      function next(){ goTo(index + 1); }
+      function prev(){ goTo(index - 1); }
+
+      prevBtn.onclick = ()=>{ prev(); restart(); };
+      nextBtn.onclick = ()=>{ next(); restart(); };
+
+      // Swipe support (mobile)
+      let startX = 0;
+      slides.addEventListener("touchstart", (e)=>{ startX = e.touches[0].clientX; }, {passive:true});
+      slides.addEventListener("touchend", (e)=>{
+        const endX = e.changedTouches[0].clientX;
+        const diff = endX - startX;
+        if(Math.abs(diff) > 40){
+          diff < 0 ? next() : prev();
+          restart();
+        }
+      }, {passive:true});
+
+      function restart(){
+        if(timer) clearInterval(timer);
+        timer = setInterval(next, 4000);
+      }
+
+      renderThumbs();
+      goTo(0);
+      restart();
+    }
+
+    createSlider({
+      slidesId:"slidesB1",
+      thumbsId:"thumbsB1",
+      counterId:"counterB1",
+      prevBtnId:"prevBtnB1",
+      nextBtnId:"nextBtnB1"
+    });
+
+    createSlider({
+      slidesId:"slidesA1",
+      thumbsId:"thumbsA1",
+      counterId:"counterA1",
+      prevBtnId:"prevBtnA1",
+      nextBtnId:"nextBtnA1"
+    });
+
+    // ===== Property Switch =====
+    const propButtons = document.querySelectorAll(".prop-btn");
+    const b1Wrap = document.getElementById("b1Wrap");
+    const a1Wrap = document.getElementById("a1Wrap");
+
+    propButtons.forEach(btn=>{
+      btn.addEventListener("click", ()=>{
+        propButtons.forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const target = btn.getAttribute("data-target");
+        if(target === "b1Wrap"){
+          b1Wrap.style.display = "block";
+          a1Wrap.style.display = "none";
+        }else{
+          b1Wrap.style.display = "none";
+          a1Wrap.style.display = "block";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
